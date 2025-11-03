@@ -1,0 +1,14 @@
+body{background:#070707;color:#fff;font-family:Arial;padding:20px;display:flex;flex-direction:column;align-items:center}
+.title{font-size:32px;color:#ffd54f}
+.slot-wrapper{position:relative;padding:28px;border-radius:18px;background:rgba(255,255,255,0.03)}
+.reel{font-size:64px;display:inline-block;width:90px;height:90px;margin:0 10px;background:rgba(255,255,255,0.06);border-radius:12px;line-height:90px;text-align:center}
+.info-row{display:flex;gap:20px;margin:8px 0;font-size:18px}
+.controls{display:flex;gap:10px;margin:8px 0}
+.btn{padding:10px 16px;border-radius:10px;font-weight:bold;cursor:pointer;border:none}
+.btn.green{background:#16a34a;color:white}
+.btn.yellow{background:#ca8a04;color:white}
+.btn.purple{background:#7c3aed;color:white}
+.btn.blue{background:#2563eb;color:white}
+#glowBackground{position:absolute;inset:0;border-radius:18px;z-index:1;background:radial-gradient(circle at center, rgba(255,215,0,0.18), rgba(0,0,0,0.75));filter:blur(12px);animation:glowPulse 4s infinite}
+@keyframes glowPulse{0%{background:radial-gradient(circle at center, rgba(255,215,0,0.18), rgba(0,0,0,0.75))}50%{background:radial-gradient(circle at center, rgba(255,0,200,0.28), rgba(0,0,0,0.7))}100%{background:radial-gradient(circle at center, rgba(255,215,0,0.18), rgba(0,0,0,0.75))}}
+.hidden{display:none!important}

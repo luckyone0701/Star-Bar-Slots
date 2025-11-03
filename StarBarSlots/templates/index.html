@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+  <!-- Splash -->
+  <div id="splashScreen"><h1>⭐ Star Bar Slots 🎰</h1></div>
+
+  <h1 id="header" class="title">{{ title }}</h1>
+
+  <div id="slotWrapper" class="slot-wrapper">
+    <div id="glowBackground"></div>
+    <div class="demo-lights" id="lightContainer"></div>
+
+    <div id="reelContainer" class="reel-container">
+      <span class="reel">🍒</span>
+      <span class="reel">🍋</span>
+      <span class="reel">💎</span>
+    </div>
+
+    <div id="sparkleContainer"></div>
+
+    <div id="lever" class="lever">
+      <div class="shaft"></div>
+      <div class="knob"></div>
+    </div>
+  </div>
+
+  <div class="info-row">
+    <div>💰 Balance: $<span id="balance">{{ balance }}</span></div>
+    <div>💵 Bet: $<span id="bet">{{ bet }}</span></div>
+  </div>
+
+  <div class="controls">
+    <button id="spinBtn" class="btn green">SPIN 🎲</button>
+    <button id="previewBtn" class="btn yellow">PREVIEW 🎞️</button>
+    <button id="demoBtn" class="btn purple">DEMO OFF 💤</button>
+    <button id="buyBtn" class="btn blue hidden">BUY COINS 💵</button>
+  </div>
+
+  <div id="result" class="result"></div>
+  <div id="coinContainer"></div>
+
+  <!-- Sounds -->
+  <audio id="sndSpin" src="{{ url_for('static', filename='sounds/spin.wav') }}"></audio>
+  <audio id="sndJackpot" src="{{ url_for('static', filename='sounds/jackpot.wav') }}"></audio>
+  <audio id="sndTwoMatch" src="{{ url_for('static', filename='sounds/twomatch.wav') }}"></audio>
+  <audio id="sndLose" src="{{ url_for('static', filename='sounds/lose.wav') }}"></audio>
+  <audio id="sndBuy" src="{{ url_for('static', filename='sounds/buy.wav') }}"></audio>
+  <audio id="sndLever" src="{{ url_for('static', filename='sounds/lever.wav') }}"></audio>
+  <audio id="sndStartup" src="{{ url_for('static', filename='sounds/startup.wav') }}"></audio>
+
+  <script src="{{ url_for('static', filename='slot.js') }}"></script>
+</body>
+</html>
